@@ -1,0 +1,14 @@
+.thumbnail {
+  width: 200px;
+  display: inline-flex;
+  img {
+    width: 100%;
+  }
+}
+.active {
+  width: 500px;
+  margin: 0 auto;
+  img {
+    width: 100%;
+  }
+}

@@ -1,0 +1,10 @@
+.row {
+  justify-content: space-around;
+  .product__content {
+    width: calc(100% / 3);
+    padding: 0 1rem;
+  }
+}
+.selected__item {
+  border: 1px solid gray;
+}

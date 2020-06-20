@@ -1,0 +1,14 @@
+.paginate__conatiner {
+  min-width: 50%;
+  width: 50%;
+  margin: auto;
+  .paginate__btn {
+    background-color: white;
+    box-shadow: none;
+    outline: none;
+    border: none;
+    border: 1px solid;
+    font-size: 1.5rem;
+    padding: 0.8rem;
+  }
+}

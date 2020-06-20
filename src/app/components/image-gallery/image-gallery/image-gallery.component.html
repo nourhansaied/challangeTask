@@ -1,0 +1,10 @@
+<ng-template ngFor let-image [ngForOf]="images" let-i="index">
+    <ng-template [ngIf]="i == 0">
+        <div class="active">
+            <img [src]="image.photo " alt="">
+        </div>
+    </ng-template>
+    <div class="thumbnail" *ngIf="i > 0">
+        <img [src]="image.thumbnail" alt="" (click)="change($event)">
+    </div>
+</ng-template>

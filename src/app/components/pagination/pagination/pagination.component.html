@@ -1,0 +1,14 @@
+<div class="paginate__conatiner" *ngIf="paginationData">
+    <div class="buttons">
+        <button class="pagination" (click)="paginate('prev')" [disabled]="currentIndexFromStart == 0">previous</button>
+
+        <button class="pagination" (click)="paginate('next')"
+            [disabled]="currentIndexFromStart == (data.length*2 -2)">Next</button>
+    </div>
+    <ng-template ngFor let-item [ngForOf]="data" let-i="index">
+
+        <button
+            [disabled]="(currentIndexFromStart == 0 && i==0) || (currentIndexFromStart == (data.length*2 -2) && (i == data.length -1))"
+            class="btn paginate__btn" (click)="paginate(i*2)">{{i+1}}</button>
+    </ng-template>
+</div>
