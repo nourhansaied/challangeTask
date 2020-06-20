@@ -5,3 +5,7 @@ export interface Product {
     price: number;
     totalReviews: number;
 }
+export interface Review {
+    review: string;
+    score: number;
+}

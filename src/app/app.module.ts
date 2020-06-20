@@ -7,6 +7,7 @@ import { APIService } from 'src/services/api.service';
 import { ProductModule } from './components/product/product.module';
 import { ImageGalleryModule } from './components/image-gallery/image-gallery.module';
 import { ReviewsModule } from './components/reviews/reviews.module';
+import { SortingModule } from './components/sorting/sorting.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { ReviewsModule } from './components/reviews/reviews.module';
     ProductModule,
     ImageGalleryModule,
     ReviewsModule,
-
+    SortingModule
   ],
   providers: [APIService],
   bootstrap: [AppComponent]
