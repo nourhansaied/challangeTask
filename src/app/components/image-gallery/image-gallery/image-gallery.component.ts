@@ -9,7 +9,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class ImageGalleryComponent implements OnInit {
   @Input() images;
   public width: any;
-  constructor(public sanitizer: DomSanitizer) {
+  constructor(private sanitizer: DomSanitizer) {
   }
 
   ngOnInit(): void {
