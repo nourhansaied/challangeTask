@@ -8,16 +8,15 @@ describe('ImageGalleryComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ImageGalleryComponent ]
+      declarations: [ImageGalleryComponent]
     })
-    .compileComponents();
+      .compileComponents()
+      .then(() => {
+        fixture = TestBed.createComponent(ImageGalleryComponent);
+        component = fixture.componentInstance;
+      })
   }));
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(ImageGalleryComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
 
   it('should create', () => {
     expect(component).toBeTruthy();

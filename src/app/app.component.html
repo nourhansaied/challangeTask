@@ -1,4 +1,5 @@
 <div class="container">
+    <h3>Challenge Idea</h3>
     <div class="row">
         <ng-template ngFor let-product [ngForOf]="allProducts" let-i="index">
             <app-product class="product__content" [product]="product" (click)="getProduct(product.id)"></app-product>
