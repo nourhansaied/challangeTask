@@ -7,9 +7,13 @@
     <div class="row" *ngIf="selectedProduct">
         <div class="selected__item">
             <h3>{{selectedProduct.name}}</h3>
-            <app-image-gallery [images]="selectedProduct.pictures"></app-image-gallery>
-            <app-sorting></app-sorting>
-            <app-reviews></app-reviews>
+            <div *ngIf="selectedProduct && selectedProduct.pictures" class="images__container">
+                <app-image-gallery class="images" [images]="selectedProduct.pictures"></app-image-gallery>
+            </div>
+            <div class="sort__reviews">
+                <app-sorting></app-sorting>
+                <app-reviews></app-reviews>
+            </div>
         </div>
     </div>
 </div>

@@ -12,13 +12,15 @@ export class APIService {
     this.httpHeaders = new HttpHeaders()
       .set('Accept-Language', 'en');
   }
-
-  get(options: any) {
-    console.log(options)
+  /**
+   * @memberof APIService
+   * @name get get request using httpClient
+   * @param options 
+   */
+  get(options) {
     this.httpHeaders['Accept-Language'] = new HttpHeaders()
       .set('Accept-Language', 'en');
     let endPoint = this.resolveUrlParams(options.endpoint, options.params)
-
     const params = this.getQueryParams(options.queryParams)
     const request = this._HttpClient.get(endPoint,
       {
@@ -30,6 +32,7 @@ export class APIService {
   }
 
   /**
+   * @memberof APIService
    * @name getQueryParams
    * @param queryParams 
    * @description extract query params
@@ -42,13 +45,13 @@ export class APIService {
     return params;
   }
   /**
+   * @memberof APIService
    * @name resolveUrlParams
    * @param url  endpoint we call
    * @param params parameters in any request
    */
   resolveUrlParams(url: Endpoint, params: Object) {
     if (!params) return url;
-
     const resolved = url.split('/').map((component) => {
       if (component[0] === ':') {
         const key = component.slice(1)
@@ -58,7 +61,6 @@ export class APIService {
         return component
       }
     })
-
     return resolved.join('/')
   }
 }

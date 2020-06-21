@@ -7,7 +7,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "typedoc": "typedoc --mode modules -module commonjs --exclude **/*.spec.ts --out docs/typedoc src/app"
   },
   "private": true,
   "dependencies": {
@@ -27,9 +28,9 @@
     "@angular-devkit/build-angular": "~0.901.8",
     "@angular/cli": "~9.1.8",
     "@angular/compiler-cli": "~9.1.11",
-    "@types/node": "^12.11.1",
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",
+    "@types/node": "^12.11.1",
     "codelyzer": "^5.1.2",
     "jasmine-core": "~3.5.0",
     "jasmine-spec-reporter": "~4.2.1",
@@ -41,6 +42,7 @@
     "protractor": "~7.0.0",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
+    "typedoc": "^0.17.7",
     "typescript": "~3.8.3"
   }
 }

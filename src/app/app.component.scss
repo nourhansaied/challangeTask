@@ -7,4 +7,16 @@
 }
 .selected__item {
   border: 1px solid gray;
+  padding: 2rem;
+  margin-top: 5rem;
+  .images__container {
+    text-align: center;
+    .images {
+      width: 100%;
+    }
+  }
+  .sort__reviews {
+    display: flex;
+    flex-direction: column;
+  }
 }

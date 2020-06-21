@@ -1,8 +1,8 @@
-<ng-template ngFor let-review [ngForOf]="currentReviews" let-i="index">
-
-    <div class="reviws__content">
-
-        <app-review [review]="review" [number]="reviewNumber + i"></app-review>
-    </div>
-</ng-template>
-<app-pagination></app-pagination>
+<div class="sorting__review">
+    <ng-template ngFor let-review [ngForOf]="currentReviews" let-i="index">
+        <div class="reviws__content">
+            <app-review [review]="review" [number]="reviewNumber + i"></app-review>
+        </div>
+    </ng-template>
+    <app-pagination></app-pagination>
+</div>

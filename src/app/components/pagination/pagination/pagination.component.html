@@ -1,20 +1,21 @@
 <div class="paginate__conatiner" *ngIf="paginationData">
     <div class="buttons">
-        <button class="pagination" (click)="paginate('prev')" [disabled]="currentIndexFromStart == 0">previous</button>
+        <button class="btn pagination" (click)="paginate('prev')"
+            [disabled]="currentIndexFromStart == 0">previous</button>
 
-        <button class="pagination" (click)="paginate('next')"
+        <button class="btn pagination" (click)="paginate('next')"
             [disabled]="currentIndexFromStart == (data.length*2 -2)">Next</button>
     </div>
     <button class="first__page" (click)="paginate(0)" [disabled]="currentIndexFromStart == 0">
-        s</button>
+        << </button>
 
-    <ng-template ngFor let-item [ngForOf]="data" let-i="index">
+            <ng-template ngFor let-item [ngForOf]="data" let-i="index">
 
-        <button
-            [disabled]="(currentIndexFromStart == 0 && i==0) || (currentIndexFromStart == (data.length*2 -2) && (i == data.length -1))"
-            class="btn paginate__btn" (click)="paginate(i*2)">{{i+1}}</button>
-    </ng-template>
-    <button class="last__page" (click)="paginate((data.length-1)*2)"
-        [disabled]="currentIndexFromStart == (data.length*2 -2)">
-        >></button>
+                <button
+                    [disabled]="(currentIndexFromStart == 0 && i==0) || (currentIndexFromStart == (data.length*2 -2) && (i == data.length -1))"
+                    class="btn paginate__btn reset__buttons" (click)="paginate(i*2)">{{i+1}}</button>
+            </ng-template>
+            <button class="last__page" (click)="paginate((data.length-1)*2)"
+                [disabled]="currentIndexFromStart == (data.length*2 -2)">
+                >></button>
 </div>

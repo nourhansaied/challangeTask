@@ -1,31 +1,29 @@
-import { TestBed, async } from '@angular/core/testing';
+import { TestBed, async, ComponentFixture } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { GetProductService } from 'src/services/get-product.service';
+import { GetAllProductsService } from 'src/services/get-all-products.service';
+import { ReviewsService } from 'src/services/reviews.service';
+import { PaginationService } from 'src/services/pagination.service';
 
 describe('AppComponent', () => {
+  let app: AppComponent;
+  let fixture: ComponentFixture<AppComponent>;
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent
       ],
-    }).compileComponents();
+      imports: [HttpClientTestingModule],
+      providers: [GetProductService, GetAllProductsService, ReviewsService, PaginationService]
+    }).compileComponents()
+      .then(() => {
+        fixture = TestBed.createComponent(AppComponent);
+        app = fixture.componentInstance;
+      })
   }));
 
   it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
     expect(app).toBeTruthy();
-  });
-
-  it(`should have as title 'Challenge-Idea'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('Challenge-Idea');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('Challenge-Idea app is running!');
   });
 });

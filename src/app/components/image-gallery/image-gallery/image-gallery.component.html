@@ -4,7 +4,7 @@
             <img [src]="image.photo " alt="">
         </div>
     </ng-template>
-    <div class="thumbnail" *ngIf="i > 0">
+    <div class="thumbnail" [style.width]="width" *ngIf="i > 0">
         <img [src]="image.thumbnail" alt="" (click)="change($event)">
     </div>
 </ng-template>

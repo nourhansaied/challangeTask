@@ -18,11 +18,22 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.getAllProducts();
   }
+  /**
+   * @memberof AppComponent
+   * @name getAllProducts
+   * @description get all products to display it 
+   */
   getAllProducts() {
     this._GetAllProductsService.getAllProducts().subscribe(data => {
       this.allProducts = data
     })
   }
+  /**
+   * @memberof AppComponent
+   * @name getProduct
+   * @param id product id
+   * @description call GetProductService service and invoke getProduct function with take the id as parameter to get product detials
+   */
   getProduct(id) {
     this._GetProductService.getProduct(id).subscribe(product => {
       this.selectedProduct = product;

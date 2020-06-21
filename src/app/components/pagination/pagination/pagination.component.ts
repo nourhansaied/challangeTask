@@ -9,10 +9,11 @@ import { Review } from 'src/types/types';
   styleUrls: ['./pagination.component.scss']
 })
 export class PaginationComponent implements OnInit {
-  paginationData: Review[] = [];
+  paginationData: Review[];
   public data: any;
   public currentIndexFromStart: number;
   constructor(private _PaginationService: PaginationService, private _ReviewsService: ReviewsService) {
+    this.paginationData = []
   }
 
   ngOnInit(): void {

@@ -8,17 +8,14 @@ describe('PaginationComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PaginationComponent ]
+      declarations: [PaginationComponent]
     })
-    .compileComponents();
+      .compileComponents()
+      .then(() => {
+        fixture = TestBed.createComponent(PaginationComponent);
+        component = fixture.componentInstance;
+      })
   }));
-
-  beforeEach(() => {
-    fixture = TestBed.createComponent(PaginationComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
   it('should create', () => {
     expect(component).toBeTruthy();
   });

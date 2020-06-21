@@ -1,16 +1,22 @@
 .sort {
+  display: flex;
+  align-items: center;
+  padding-left: calc(100% - 75%);
+  span {
+    padding-right: 2rem;
+  }
   .sort-up {
     width: 0;
     height: 0;
-    border-left: 25px solid transparent;
-    border-right: 25px solid transparent;
-    border-bottom: 50px solid #555;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 30px solid #555;
   }
   .sort-down {
     width: 0;
     height: 0;
-    border-left: 25px solid transparent;
-    border-right: 25px solid transparent;
-    border-top: 50px solid #555;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 30px solid #555;
   }
 }

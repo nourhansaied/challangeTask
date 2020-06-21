@@ -1,14 +1,66 @@
+$mainColor: #17a9ef;
+$whiteColor: white;
+.shared__style {
+  font-size: 16px;
+  padding: 1rem 1.5rem;
+  background: $whiteColor;
+  border: none;
+}
+.disable {
+  @extend .shared__style;
+  border: 1px solid #aaaaaa;
+  color: #aaaaaa;
+}
+.hover {
+  background-color: $mainColor;
+  color: $whiteColor;
+  cursor: pointer;
+}
 .paginate__conatiner {
   min-width: 50%;
   width: 50%;
   margin: auto;
-  .paginate__btn {
-    background-color: white;
-    box-shadow: none;
-    outline: none;
-    border: none;
+  text-align: center;
+  .paginate__btn,
+  .first__page,
+  .last__page {
+    background-color: $whiteColor;
     border: 1px solid;
-    font-size: 1.5rem;
+    font-size: 1rem;
     padding: 0.8rem;
+    color: $mainColor;
+    &:disabled {
+      @extend .disable;
+      padding: 0.8rem;
+    }
+    &:focus {
+      outline: none;
+    }
+    &:hover:not(:disabled) {
+      @extend .hover;
+    }
+  }
+  .buttons {
+    margin: 2rem 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    .pagination {
+      @extend .shared__style;
+      border-radius: 4rem;
+      border: 1px solid $mainColor;
+      color: $mainColor;
+      min-width: 120px;
+
+      &:disabled {
+        @extend .disable;
+      }
+      &:focus {
+        outline: none;
+      }
+      &:hover:not(:disabled) {
+        @extend .hover;
+      }
+    }
   }
 }
